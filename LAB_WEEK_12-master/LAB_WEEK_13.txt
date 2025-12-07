@@ -1,0 +1,17 @@
+Nama	: Rasya Abhista Indrabaswara
+NIM	: 00000104642
+
+1. Why is MVVM important? Which files represent Model, which files represent View, and which files represent ViewModel?
+MVVM penting karena memisahkan UI (View) dan logika bisnis/data (Model) sehingga memudahkan pengembangan, pengujian, dan pemeliharaan aplikasi. Model diwakili oleh Movie.kt, View diwakili oleh activity_main.xml dan MainActivity.kt, sedangkan ViewModel diwakili oleh MovieViewModel.kt.
+
+2. In Part 1, you implemented Data Binding, why is this more efficient than using the normal method?
+Data Binding lebih efisien karena memungkinkan UI berinteraksi langsung dengan ViewModel tanpa harus memanggil findViewById, mengurangi boilerplate code, dan memastikan UI selalu terupdate ketika data berubah.
+
+3. In Part 2, you implemented the Singleton Pattern, why is this important?
+Singleton Pattern penting untuk database Room agar hanya ada satu instance database yang digunakan di seluruh aplikasi, mencegah race condition, dan memastikan integritas data serta efisiensi penggunaan memori.
+
+4. In Part 2 & 3, you implemented the Repository Pattern, why is this important?
+Repository Pattern penting karena menyatukan sumber data dari API dan database lokal (Room). Hal ini membuat aplikasi tetap bisa diakses offline dan menjaga data selalu sinkron antara server dan lokal.
+
+5. In part 3, you implemented the Worker Manager, is there another way to refresh your database with the latest data other than using Worker?
+Selain WorkManager, data bisa diperbarui secara manual dengan tombol refresh, menggunakan AlarmManager, JobScheduler, atau memanfaatkan pull-to-refresh di UI untuk memanggil fungsi refresh dari Repository.
