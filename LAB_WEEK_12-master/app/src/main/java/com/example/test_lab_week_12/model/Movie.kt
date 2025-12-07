@@ -1,28 +1,63 @@
 package com.example.test_lab_week_12.model
 
+import androidx.room.Entity
+import androidx.room.Ignore
+import androidx.room.PrimaryKey
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
+@Entity(tableName = "movies")
 @JsonClass(generateAdapter = true)
 data class Movie(
-    val adult: Boolean = false,
-    val backdrop_path: String? = null,
-    val id: Int = 0,
-    @field:Json(name = "original_language")
-    val originalLanguage: String? = null,
-    @field:Json(name = "original_title")
-    val originalTitle: String? = null,
-    val overview: String? = null,
-    val popularity: Float = 0f,
-    @field:Json(name = "poster_path")
-    val posterPath: String? = null,
-    @field:Json(name = "release_date")
-    val releaseDate: String? = null,
-    val title: String? = null,
-    val video: Boolean = false,
-    @field:Json(name = "vote_average")
-    val voteAverage: Float = 0f,
-    @field:Json(name = "vote_count")
-    val voteCount: Int = 0
-)
 
+    @PrimaryKey
+    var id: Int = 0,
+
+    var adult: Boolean = false,
+
+    var backdrop_path: String? = null,
+
+    @field:Json(name = "original_language")
+    var originalLanguage: String? = null,
+
+    @field:Json(name = "original_title")
+    var originalTitle: String? = null,
+
+    var overview: String? = null,
+
+    var popularity: Float = 0f,
+
+    @field:Json(name = "poster_path")
+    var posterPath: String? = null,
+
+    @field:Json(name = "release_date")
+    var releaseDate: String? = null,
+
+    var title: String? = null,
+    var video: Boolean = false,
+
+    @field:Json(name = "vote_average")
+    var voteAverage: Float = 0f,
+
+    @field:Json(name = "vote_count")
+    var voteCount: Int = 0
+) {
+
+    // Constructor default untuk Moshi (tidak dipakai Room)
+    @Ignore
+    constructor() : this(
+        id = 0,
+        adult = false,
+        backdrop_path = "",
+        originalLanguage = "",
+        originalTitle = "",
+        overview = "",
+        popularity = 0f,
+        posterPath = "",
+        releaseDate = "",
+        title = "",
+        video = false,
+        voteAverage = 0f,
+        voteCount = 0
+    )
+}
