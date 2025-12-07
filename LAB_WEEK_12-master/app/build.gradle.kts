@@ -8,9 +8,9 @@ android {
     namespace = "com.example.test_lab_week_12"
     compileSdk = 36
 
-    // 🔥 WAJIB untuk mengaktifkan BuildConfig
     buildFeatures {
         buildConfig = true
+        dataBinding = true
     }
 
     defaultConfig {
@@ -22,7 +22,6 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        // 🔥 BuildConfig API Key (AMAN, tidak ikut GitHub)
         buildConfigField(
             "String",
             "TMDB_API_KEY",
