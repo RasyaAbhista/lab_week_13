@@ -50,6 +50,9 @@ android {
 }
 
 dependencies {
+    // Tambahkan ini di dependencies
+    implementation("androidx.work:work-runtime-ktx:2.8.1")
+
 
     implementation(libs.androidx.recyclerview)
     implementation(libs.glide)
